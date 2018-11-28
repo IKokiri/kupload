@@ -9,12 +9,13 @@ $oFile = new File();
 
 $name = $_FILES['file']['name'];
 $path = "files/";
-$local = $path.$name;
+echo $local = $path.$name;
 
 $result = $oFile->verificarTipo($name);
 
 if($result['status']){
     move_uploaded_file($_FILES['file']['tmp_name'], $local);
+    echo $result['msg'];
 }else{
     echo $result['msg'];
 }

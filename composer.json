@@ -1,0 +1,13 @@
+{
+    "name": "root/kupload",
+    "authors": [
+        {
+            "name": "Luiz Mendes",
+            "email": "luiz.mendes@outlook.com"
+        }
+    ],
+    "require-dev": {
+	    "phpunit/phpunit":"^7"
+    },
+    "require": {}
+}

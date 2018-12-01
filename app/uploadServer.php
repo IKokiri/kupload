@@ -1,18 +1,19 @@
 <?php
 
-require "File.php";
-require "Server.php";
-require "Database.php";
+require "../vendor/autoload.php";
+
+use File\File;
+
+// use DAO\Database;
 
 /**
  * Classe responsável por tratar os propriedades de arquivos
  */
 $oFile = new File();
 
-
 $name = $_FILES['file']['name'];
 $path = "files/";
-echo $local = $path.$name;
+$local = $path.$name;
 
 $result = $oFile->verificarTipo($name);
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace File;
+
 class File{
 
     function File(){

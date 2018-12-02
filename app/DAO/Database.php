@@ -1,6 +1,6 @@
 <?php
 
-namespace app\DAO;
+namespace DAO;
 /**
  * INCLUSAO DA CLASSE QUE SEGURA AS INFORMAÇOES PARA CONEXÃO COM O BANCO
  */

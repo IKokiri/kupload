@@ -3,7 +3,6 @@
 require "../vendor/autoload.php";
 
 use File\File;
-
 use DAO\Database;
 /**
  * Classe responsável por tratar os propriedades de arquivos

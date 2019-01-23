@@ -32,6 +32,7 @@ if(isset($_REQUEST['code'])){
 $oFile = new File();
 
 $name = $_FILES['file']['name'];
+$size = $_FILES['file']['size'];
 
 $path = "files/";
 
@@ -44,7 +45,7 @@ if($result['status']){
     move_uploaded_file($_FILES['file']['tmp_name'], $local);
 
     $con = Database::getConnect();
-    $sql = 'insert into files(nome,nomeReal,local,data,code) VALUES (:nome,:nomeReal,:local,curdate(),:code)';
+    $sql = 'insert into files(nome,nomeReal,local,data,code,size) VALUES (:nome,:nomeReal,:local,curdate(),:code,:size)';
     $query = $con->prepare($sql);
 
     $code = md5(date("YmdHis"),'');
@@ -53,6 +54,7 @@ if($result['status']){
     $query->bindValue(':nomeReal', $name, PDO::PARAM_STR);
     $query->bindValue(':local', $path, PDO::PARAM_STR);
     $query->bindValue(':code', $code, PDO::PARAM_STR);
+    $query->bindValue(':size', $size, PDO::PARAM_STR);
     
     $result = Database::executa($query);
 

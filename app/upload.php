@@ -18,12 +18,10 @@
     <form enctype="multipart/form-data" action="uploadServer.php" method="POST">
 
         <input type="file" style="display:none" name="file" id="file">
-        <input class="btn btn-primary" type="submit" value="Enviar">
+        <input class="btn btn-primary" id="enviar" type="submit" value="Enviar">
 
     </form>
     <br>
-    
-   
     <div class='input-group mb-3'>
         <input class='form-control text-center'  readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
         <div class='input-group-append'>
@@ -52,6 +50,11 @@ $(document).ready(function(){
 
     })
 
+    $("#enviar").click(function(){
+        
+        $("#upload").attr("src","../assets/images/load.gif")
+
+    })
 
     $("#file").change(function(prop){
 
@@ -73,7 +76,7 @@ $(document).ready(function(){
         if(copyText.value){
 
             $("#status-link").html("Copiado");
-            
+
         }
         
     })

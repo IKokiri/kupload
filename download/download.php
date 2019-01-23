@@ -22,7 +22,9 @@
         
         <a id="link" href="">
             <button type="button" class="btn btn-outline-primary btn-lg">Download</button>
-        </a>    
+        </a>   
+        <h4 id="dados">
+            </h4> 
         <input type="hidden" id="code" value="<?=$_GET['code']?>">
         </div>
 
@@ -59,7 +61,9 @@ function buscarDownload() {
         success: function (data) {
             
             nome = data.nomeReal;
+            tamanho = (data.size / 1000000).toFixed(2);
             $("#link").attr('href',server+"/kupload/app/files/"+nome)
+            $("#dados").html(nome+"<br>("+tamanho+" MB)");
 
         },
         processData: false,

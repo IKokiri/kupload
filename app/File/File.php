@@ -4,10 +4,6 @@ namespace File;
 
 class File{
 
-    function File(){
-            
-    }
-
     public function verificarTipo($fileName){
         
         $retorno = array("status"=>"","msg"=>"");

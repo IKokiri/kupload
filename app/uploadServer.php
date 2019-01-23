@@ -4,6 +4,7 @@ require "../vendor/autoload.php";
 
 use File\File;
 use DAO\Database;
+use Server\Server;
 /**
  * Classe responsável por tratar os propriedades de arquivos
  */
@@ -30,11 +31,10 @@ if($result['status']){
     $query->bindValue(':local', $local, PDO::PARAM_STR);
 
     $result = Database::executa($query);
-    
-    echo "<a href='http://localhost/kupload/app/".$local."'>Download</a>";
+
 
 }else{
-
+    echo $result['msg'];
 } 
 
 ?>

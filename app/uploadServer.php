@@ -1,6 +1,9 @@
 <?php
 
 require "../vendor/autoload.php";
+
+header('Access-Control-Allow-Origin: *');
+
 use File\File;
 use DAO\Database;
 use Server\Server;

@@ -30,6 +30,8 @@ if($result['status']){
     $query->bindValue(':local', $local, PDO::PARAM_STR);
 
     $result = Database::executa($query);
+    
+    echo "<a href='http://localhost/kupload/app/".$local."'>Download</a>";
 
 }else{
 

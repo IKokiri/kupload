@@ -97,8 +97,6 @@ class Database extends InfoDB
 
     static function executa($sql)
     {
-
-
         try {
 
             $arrayRetorno['status'] = true;

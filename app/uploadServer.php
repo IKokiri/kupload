@@ -23,18 +23,20 @@ if($result['status']){
     move_uploaded_file($_FILES['file']['tmp_name'], $local);
 
     $con = Database::getConnect();
-    $sql = 'insert into files(nome,nomeReal,local) VALUES (:nome,:nomeReal,:local)';
+    $sql = 'insert into files(nome,nomeReal,local,data) VALUES (:nome,:nomeReal,:local,curdate())';
     $query = $con->prepare($sql);
 
     $query->bindValue(':nome', $name, PDO::PARAM_STR);
-    $query->bindValue(':nomeReal', $path, PDO::PARAM_STR);
-    $query->bindValue(':local', $local, PDO::PARAM_STR);
-
+    $query->bindValue(':nomeReal', $name, PDO::PARAM_STR);
+    $query->bindValue(':local', $path, PDO::PARAM_STR);
+    
     $result = Database::executa($query);
 
+    header("Location: upload.php?link=".Server::getServerDownload().$local);
 
 }else{
     echo $result['msg'];
 } 
+
 
 ?>

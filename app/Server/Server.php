@@ -4,15 +4,15 @@ namespace Server;
 
 class Server{
 
-    private static $serverReal = "http://localhost/kupload";
-    private static $serverDownload = "http://localhost/kupload/app/files";
+    private static $serverReal = "http://localhost/kupload/";
+    private static $serverDownload = "http://localhost/kupload/app/";
 
-    public function getServerReal(){
+    public static function getServerReal(){
         return self::$serverReal;
     }
 
-    public function getServerDownload(){
-        return self::$getServerDownload;
+    public static function getServerDownload(){
+        return self::$serverDownload;
     }
 }
 

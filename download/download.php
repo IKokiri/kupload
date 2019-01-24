@@ -7,31 +7,31 @@
     <title>Kuttner</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
+
+        <style>
+        .card{
+            top:5rem;
+            left:5rem;
+        }
+        body{
+            background-image: url("back.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container text-center">
 
-        <div class="text-center">
-            <div>
-                <img src="kdb.png" alt="">
-            </div>
-        </div>
-        <br>
-        <div class="text-center">
+<div class="card" style="width: 18rem;">
+    <img src="kdb.png" class="card-img-top" alt="...">
+    <div class="card-body text-center">
+        <h5 class="card-title" id="dados"></h5>
         
-        <a id="link" href="">
-            <button type="button" class="btn btn-outline-primary btn-lg">Download</button>
-        </a>   
-        <h4 id="dados">
-            </h4> 
+        <a  id="link" href="#" class="btn btn-primary">Download</a>
         <input type="hidden" id="code" value="<?=$_GET['code']?>">
-        </div>
-
-
     </div>
-
-
+</div>
 
 
 

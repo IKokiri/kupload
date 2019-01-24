@@ -22,7 +22,23 @@
 </head>
 <body>
 
+
+
     <div class="card text-center" style="width: 20rem;">
+
+    <?php
+if(isset($_REQUEST['msgErro'])){
+    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">'.
+    '<strong>Um erro Ocorreu</strong> <br>'.$_REQUEST['msgErro'].
+    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'.
+    '<span aria-hidden="true">&times;</span>'.
+    '</button>'.
+'</div>';
+}
+?>
+
+
+
         <img id="upload" src="../assets/images/upload.png" style="cursor:pointer;" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text" id="nomeArquivo">                

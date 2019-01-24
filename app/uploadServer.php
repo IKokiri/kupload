@@ -61,7 +61,8 @@ if($result['status']){
     header("Location: upload.php?link=".Server::getServerDownload()."?code=".$code);
 
 }else{
-    echo $result['msg'];
+    
+    header("Location: upload.php?msgErro=".$result['msg']);
 } 
 
 

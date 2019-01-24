@@ -6,31 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kupload</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .card{
+            top:10rem;
+            left:10rem;
+        }
+        body{
+            background-image: url("../assets/images/back.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container text-center">
-    
-    <img id="upload" style="cursor:pointer;width:30%" src="../assets/images/upload.png" class="card-img-top" alt="upload">
-    
-    <p class="card-text" id="nomeArquivo"></p>
-    
-    <form enctype="multipart/form-data" action="uploadServer.php" method="POST">
+    <div class="card text-center" style="width: 20rem;">
+        <img id="upload" src="../assets/images/upload.png" style="cursor:pointer;" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text" id="nomeArquivo">                
+            </p>
 
-        <input type="file" style="display:none" name="file" id="file">
-        <input class="btn btn-primary" id="enviar" type="submit" value="Enviar">
+            <form class="form-group" enctype="multipart/form-data" action="uploadServer.php" method="POST">
+                <input type="file" style="display:none" name="file" id="file">
+                <input class="btn btn-primary" id="enviar" type="submit" value="Enviar">
+            </form>
 
-    </form>
-    <br>
-    <div class='input-group mb-3'>
-        <input class='form-control text-center'  readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
-        <div class='input-group-append'>
-            <span class='input-group-text' id='status-link'>Copiar Link</span>
+            <div class='input-group mb-3'>
+                <input class='form-control text-center'  readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
+                <div class='input-group-append'>
+                 <span class='input-group-text' id='status-link'>Copiar Link</span>
+                </div>
+            </div>
+
         </div>
     </div>
-
-
-</div>
 
     
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

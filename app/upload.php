@@ -32,7 +32,7 @@
             </form>
 
             <div class='input-group mb-3'>
-                <input class='form-control text-center'  readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
+                <input class='form-control text-center' readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
                 <div class='input-group-append'>
                  <span class='input-group-text' id='status-link'>Copiar Link</span>
                 </div>
@@ -49,9 +49,24 @@
 
 $(document).ready(function(){
 
+
+
     function toMb(value){
 
         return (value / 1000000).toFixed(2);
+    }
+
+    function copiarLink(){
+
+        copyText = document.getElementById("link");
+
+        copyText.select();
+        if(copyText.value){
+
+            document.execCommand("copy");
+            $("#status-link").html("Copiado");
+        }
+        
     }
 
     $("#upload").click(function(){
@@ -79,17 +94,11 @@ $(document).ready(function(){
 
     $("#status-link").click(function(){
        
-        var copyText = document.getElementById("link");
-        copyText.select();
-        document.execCommand("copy");
-        if(copyText.value){
-
-            $("#status-link").html("Copiado");
-
-        }
+        copiarLink(); 
         
     })
 
+    
 })
 
 </script>

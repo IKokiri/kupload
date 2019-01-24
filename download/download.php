@@ -12,6 +12,8 @@
         .card{
             top:5rem;
             left:5rem;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px black;
         }
         body{
             background-image: url("back.jpg");
@@ -23,7 +25,8 @@
 
 <body>
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
+<br>
     <img src="kdb.png" class="card-img-top" alt="...">
     <div class="card-body text-center">
         <h5 class="card-title" id="dados"></h5>
@@ -32,9 +35,6 @@
         <input type="hidden" id="code" value="<?=$_GET['code']?>">
     </div>
 </div>
-
-
-
 
 
 </body>

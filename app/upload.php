@@ -10,6 +10,8 @@
         .card{
             top:10rem;
             left:10rem;
+            border-radius: 10px;
+            box-shadow: 10px 10px 5px black;
         }
         body{
             background-image: url("../assets/images/back.jpg");
@@ -34,7 +36,10 @@
             <div class='input-group mb-3'>
                 <input class='form-control text-center' readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
                 <div class='input-group-append'>
-                 <span class='input-group-text' id='status-link'>Copiar Link</span>
+                 <span class='input-group-text' id='status-link'>Copiar</span>
+                 <a href="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
+                    <span class='input-group-text' id='ir-para'> Ir para</span>
+                 </a>
                 </div>
             </div>
 

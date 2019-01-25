@@ -50,12 +50,13 @@ if(isset($_REQUEST['msgErro'])){
             </form>
 
             <div class='input-group mb-3'>
+                <a href="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
+                    <span class='input-group-text' id='ir-para'> Ir para</span>
+                 </a>
                 <input class='form-control text-center' readonly type='text' id='link' value="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
                 <div class='input-group-append'>
                  <span class='input-group-text' id='status-link'>Copiar</span>
-                 <a href="<?=(isset($_GET['link'])?$_GET['link']:'')?>">
-                    <span class='input-group-text' id='ir-para'> Ir para</span>
-                 </a>
+                 
                 </div>
             </div>
 

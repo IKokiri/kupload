@@ -37,8 +37,6 @@ if(isset($_REQUEST['msgErro'])){
 }
 ?>
 
-
-
         <img id="upload" src="../assets/images/upload.png" style="cursor:pointer;" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text" id="nomeArquivo">                

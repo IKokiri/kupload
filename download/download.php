@@ -9,11 +9,11 @@
         crossorigin="anonymous">
 
         <style>
+        
         .card{
-            top:5rem;
-            left:5rem;
             border-radius: 10px;
             box-shadow: 10px 10px 5px black;
+            min-width:240px
         }
         body{
             background-image: url("back.jpg");
@@ -24,19 +24,50 @@
 </head>
 
 <body>
+<div class="container">
+    <div class="row">
+        &nbsp;
+    </div>
 
-<div class="card" style="width: 20rem;">
-<br>
-    <img src="kdb.png" class="card-img-top" alt="...">
-    <div class="card-body text-center">
-        <h5 class="card-title" id="dados"></h5>
-        
-        <a  id="link" href="#" class="btn btn-primary">Download</a>
-        <input type="hidden" id="code" value="<?=$_GET['code']?>">
+    <div class="row">
+        <div class="alert alert-primary" role="alert">
+            Sobre a <a href="http://www.kuttner.com.br" class="alert-link">Kuttner</a>
+        </div>
+    </div>
+
+    <div class="card row" style="width: 30%;">
+    <br>
+        <img src="kdb.png" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+            <h5 class="card-title" id="dados"></h5>
+            
+            <a  id="link" href="#" class="btn btn-primary">Download</a>
+            <input type="hidden" id="code" value="<?=$_GET['code']?>">
+        </div>
     </div>
 </div>
-
-
+<!-- MODAL SOBRE KUTTNER -->
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Kuttner do Brasil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Nós temos como filosofia sermos exigentes com o nosso trabalho, pois entendemos que somente dessa maneira poderemos atender com competência as necessidades específicas de nossos clientes. Para atingir esse objetivo, desenvolvemos continuamente nossas tecnologias. Estar atualizados e cientes do melhor estado da técnica, significa para nós poder sempre oferecer o que há de melhor no mercado. Exigentes, modernos e comprometidos, assim a Kuttner define o seu sucesso. 
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL SOBRE KUTTNER -->
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -84,5 +115,7 @@ function buscarDownload() {
 
 $(document).ready(function(){
     buscarDownload();
+
+        // $(".modal").show();
 })
 </script>

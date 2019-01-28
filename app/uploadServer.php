@@ -63,6 +63,7 @@ if($result['status']){
 }else{
     
     header("Location: upload.php?msgErro=".$result['msg']);
+    
 } 
 
 
